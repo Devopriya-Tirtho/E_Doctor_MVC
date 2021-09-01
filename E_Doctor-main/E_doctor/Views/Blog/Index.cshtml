@@ -1,0 +1,132 @@
+﻿@model RegistrationUserMVC.Models.BlogInsert
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    @*<link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/prescription.css">
+        <link rel="stylesheet" href="css/media.css">*@
+    <link href="~/Content/mybootstrap.css" rel="stylesheet" />
+    @*<link href="~/Content/prescription.css" rel="stylesheet" />*@
+
+
+    <title>Bootstrap PSD to HTML</title>
+</head>
+
+@using (Html.BeginForm())
+{
+
+<body>
+
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-md-10">
+            <p>To write blog ,tap</p>
+        </div>
+        <div class="col-md-2"><button class="btn btn-outline-secondary" type="button" id="button-addon1" data-toggle="modal" data-target="#exampleModal1">write</button></div>
+    </div>
+
+
+    <!--                    -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Write blog</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="">
+                        <div class="form-group row">
+                            <label for="inputName" class="col-sm-10 col-form-label">
+                                <h4>Heading</h4>
+                            </label>
+                            <div class="col-sm-12">
+                                @Html.EditorFor(model => model.BlogHeading, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.BlogHeading, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputName" class="col-sm-10 col-form-label">
+                                <h4>EXPERIENCE SHARING </h4>
+                            </label>
+                            <div class="col-sm-12">
+                             
+                                @Html.EditorFor(model => model.ExperienceSharing, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ExperienceSharing, "", new { @class = "text-danger" })
+
+                                              
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputName" class="col-sm-10 col-form-label">
+                                <h4>MOTIVATE YOURSELF</h4>
+                            </label>
+                            <div class="col-sm-12">
+                                <div class="col-sm-12">
+                                    
+ @Html.EditorFor(model => model.Motivation, new { htmlAttributes = new { @class = "form-control"} })
+                                @Html.ValidationMessageFor(model => model.Motivation, "", new { @class = "text-danger" })
+                                               
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputName" class="col-sm-10 col-form-label">
+                                <h4>Advice</h4>
+                            </label>
+                            <div class="col-sm-12">
+                                <div class="col-sm-12">
+                                    
+                               @Html.EditorFor(model => model.Advice, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Advice, "", new { @class = "text-danger" })
+                                               
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center m-5">
+                            
+                            <button class="btn btn-outline-warning" type="submit" name="Submit" id="button-addon1">Submit </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <!-- jQuery first then Bootstrap JS -->
+    @*<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>*@
+    <!--    customized js-->
+    @*<script type="text/javascript" src="js/main.js"></script>*@
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/mybootstrap.js"></script>
+</body>
+}
+
+</html>
+
+
+
+

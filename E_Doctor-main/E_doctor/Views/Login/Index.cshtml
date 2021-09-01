@@ -1,0 +1,101 @@
+﻿@model RegistrationUserMVC.Models.login
+@{
+    Layout = null;
+}
+
+
+
+<html>
+<head>
+    <title>User Login Page</title>
+    <!--
+    <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/signupstyle.css">
+        <link rel="stylesheet" href="css/media.css">
+    -->
+    <link href="~/Content/mybootstrap.css" rel="stylesheet" />
+    <link href="~/Content/signupstyle.css" rel="stylesheet" />
+</head>
+<body style="background-color:#bdc3c7">
+
+    <div class="main-wrapper">
+
+        <h2 class="text-center m-4">Login </h2>
+
+        @using (Html.BeginForm("Autherized", "Login", FormMethod.Post))
+        {
+
+        <form class="myform" action="signin.php" method="post">
+            <label><b>UserName:</b></label><br>
+            
+            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control mb-2 mt-2 pb-2 pt-2" } })
+            <br />
+            <label><b>Password:</b></label><br>
+            
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control mb-2 mt-2 pb-2 pt-2" } })
+            <br />
+            <br /> <label class="field-validation-error">@Html.DisplayFor(model => model.LoginErrorMessage)</label><br />
+
+            <input type="submit" name="Submit" id="login_btn" class="btn-secondary mb-2" value="SIGNIN" /><br>
+            @*<a href="register.ph"><input type_btn" class="btn-secondary" value="Register" /></a>*@
+            <a href="/User/AddOrEdit"><input type="button" class="btn-secondary mt-2" value="Register" id="register_btn" /></a>
+        </form>
+
+        }
+    </div>
+</body>
+</html>
+
+@*<!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Login</title>
+    </head>
+    <body>
+        <div id="login-div">
+            @using (Html.BeginForm("Autherized", "Login", FormMethod.Post))
+            {
+                <table>
+                    <tr>
+                        <td></td>
+                        <td style="text-decoration:underline">App Name</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(model => model.UserName)
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.UserName)
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>@Html.LabelFor(model => model.Password)</td>
+                        <td> @Html.EditorFor(model => model.Password)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <label class="field-validation-error">@Html.DisplayFor(model => model.LoginErrorMessage)</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" name="Submit" value="Login" />
+                            <button  style="text-align: center;"><a href="/User/AddOrEdit">Register Now</a></button>
+                        </td>
+
+                    </tr>
+                </table>
+
+
+
+            }
+        </div>
+        <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    </body>
+    </html>*@

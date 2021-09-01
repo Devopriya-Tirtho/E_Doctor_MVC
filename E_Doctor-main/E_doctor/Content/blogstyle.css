@@ -1,0 +1,76 @@
+@font-face {
+  font-family: 'Raleway', sans-serif;
+/*    src: url(../fonts/Raleway-Black.ttf);*/
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway";
+}
+body{
+    background-image: url(../images/bb2.jpg);
+    background-repeat: no-repeat;
+    filter: blur();
+    background-size: cover;
+    background-position: center;
+}
+
+.blog {
+    text-transform: uppercase;
+    margin:30px 0;
+
+}
+
+.blog_background {
+    background-color:#ffffff;
+    border-radius: 15px;
+/*    padding: 30px;*/
+   
+/*    FCDB00*/
+}
+
+.blog_description {
+   background-image: linear-gradient(to right,rgba(192,192,192,1), rgba(50,198,154,0.5), rgba(192,192,192,2));
+    border-radius: 15px;
+    margin: 40px 10px 0 10px;
+    padding: 20px;
+
+}
+
+.blog_name {
+    padding: 10px;
+    text-align: center;
+}
+
+.blog_mainfeature {
+    padding: 10px;   
+
+}
+.blog_mainfeature p{
+    
+    color: #555555;
+
+}
+.blog_Text {
+    padding: 10px;
+    
+}
+.blog_Text h6{
+    
+    color: #555555;
+}
+
+.blog_price {
+    padding: 10px;
+
+}
+.blog_price p{
+/*    font-size: 25px;*/
+    color: #555555;
+
+}
+.blog_image img{
+    width: 100%;
+}

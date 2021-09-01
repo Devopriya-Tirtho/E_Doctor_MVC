@@ -1,0 +1,39 @@
+﻿@model IEnumerable<RegistrationUserMVC.Models.Calender>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+<body>
+    <cente>
+        <table>
+            <tr>
+                <th>AppointmentID</th>
+                <th>Patient Name</th>
+                <th>Doctor Name</th>
+                <th>Deprtment</th>
+                <th>Appointment Date</th>
+                <th>Appointment Time</th>
+            </tr>
+            @foreach (RegistrationUserMVC.Models.Calender emp in Model )
+            {
+            <tr>
+                <td>@emp.AppointmentID</td>
+                <td>@emp.PatientName</td>
+                <td>@emp.DoctorName</td>
+                <td>@emp.Department</td>
+                <td>@emp.AppointmentDate</td>
+                <td>@emp.AppointmentTime</td>
+            </tr>
+            }
+        </table>
+    </cente>
+</body>
+</html>

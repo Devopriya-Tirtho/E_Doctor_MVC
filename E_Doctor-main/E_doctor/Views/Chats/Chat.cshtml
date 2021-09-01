@@ -1,0 +1,79 @@
+﻿<style>
+    div.panel-body {
+        overflow: scroll;
+        background: url('http://subtlepatterns.com/patterns/geometry2.png');
+    }
+</style>
+<h2>ChatBox</h2>
+<div class="chat-panel panel panel-default">
+    <div class="panel-heading">
+        Chat With Your Doctor
+        <i class="fa fa-paper-plane fa-fw"></i>
+    </div>
+    
+    <div class="panel-body" id="chat" style="height:420px;">
+        <input type="hidden" id="displayname" />
+
+        <p id="discussion"></p>
+    </div>
+
+    <div class="panel-footer">
+        <div class="input-group">
+            <input id="message" type="text" name="message" class="form-control input-sm" placeholder="Type your message here..." />
+
+            <span class="input-group-btn">
+                <input type="button" class="btn btn-warning btn-sm" id="sendmessage" value="Send">
+
+            </span>
+        </div>
+    </div>
+</div>
+@section scripts {
+    
+    <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+
+    <script src="~/signalr/hubs"></script>
+    
+    <script>
+        $(function () {
+          
+            var chat = $.connection.chatHub;
+           
+            chat.client.addNewMessageToPage = function (name, message) {
+               // if (name == "Dr.Biju" || name == "Dr.Vikram" || name == "Dr.Franklin" && password= "123")
+                if (name == "Dr.Biju" || name == "Dr.Vikram" || name == "Dr.Franklin") {
+                    // Add the message to the page.
+                    $('#discussion').append('<p style="color:green; text-align:left; width:500px"><strong><img = src="https://www.phplivesupport.com/pics/icons/avatars/public/avatar_11.png" title="Atir">'
+                        + ' </strong> ' + htmlEncode(message) + '</p>');
+                }
+            
+                
+                else if (name == "Dipesh" || name == "Shafin" || name == "Tirtho") {
+                    // Add the message to the page.
+                    $('#discussion').append('<p style="color:blue;text-align:right;"><strong><img = src="https://www.phplivesupport.com/pics/icons/avatars/public/avatar_56.png" title="Peter">'
+                        + ' </strong> ' + htmlEncode(message) + '</p>');
+                }           
+            };
+           
+            $('#displayname').val(prompt('Enter your name:', ''));
+            $('#displayname2').val(prompt('Enter your password:', ''));
+          
+            $('#message').focus();
+            
+            $.connection.hub.start().done(function () {
+                $('#sendmessage').click(function () {
+                    
+                    chat.server.send($('#displayname').val(), $('#message').val());
+                   
+                    $('#message').val('').focus();
+                });
+            });
+        });
+       
+        function htmlEncode(value) {
+            var encodedValue = $('<div />').text(value).html();
+            return encodedValue;
+        }
+    </script>
+}
+

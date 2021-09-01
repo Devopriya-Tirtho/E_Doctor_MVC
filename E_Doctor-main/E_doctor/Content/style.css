@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway";
+}
+
+/*header start*/
+header {
+    background-color: #32C69A;
+
+}
+
+.header_logo {}
+
+.header_nav {}
+
+.header_nav ul {}
+
+.header_nav ul li {
+    font-size: 18px;
+    color: white !important;
+    margin: 0 7px;
+    font-family: "Raleway";
+    font-weight: 900;
+
+}
+
+.header_nav ul li a:hover {
+    /*    background-color: #B0E9D8 !important;*/
+    color: white !important;
+    font-weight: bold;
+    border-bottom: 2px solid white;
+    /*
+    border-top-left-radius: 4px;
+    border-top-right-radius:4px;
+*/
+}
+
+/*banner start*/
+.banner {
+    background-image: url(../images/index_hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 100px;
+    background-position: center;
+}
+
+.banner_heading {
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.banner_content {
+    font-size: 20px;
+    padding: 30px 0;
+}
+
+.banner_btn {
+    font-size: 20px;
+    background-color: #32C69A;
+    border: none;
+    text-decoration: none;
+    width: 150px;
+    border-radius: 5px;
+    min-height: 50px;
+    padding: 0px !important;
+
+}
+
+.banner_btn1:hover {
+    color: white !important;
+    background-color: #32C69A;
+}
+
+/*feature staart*/
+.single_feature {
+    margin: 100px 0;
+}
+
+.single_feature_body {
+    background-color: #F4F8FB !important;
+}
+
+.single_feature_title {
+    font-weight: bold !important;
+}
+
+.single_feature_text {
+    color: #838383 !important;
+}
+
+/*appointment start*/
+.appointment {
+    background-image: url(../images/cta_1.jpg);
+    padding: 50px 0 20px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    background-position: top;
+}
+
+.appointment_text1 {}
+
+.appointment_text2 {
+    color: #838383 !important;
+}
+
+/*service start*/
+.service {
+    background-color: #F4F8FB;
+}
+
+.service_heading1 {
+    padding: 50px 0 20px 0;
+}
+
+.service_heading2 {}
+
+.single_service {
+    margin: 20px 0;
+}
+
+.single_service_logo {}
+
+.single_service_title {}
+
+.single_service_text {
+    padding: 20px 0;
+}
+
+.single_service_btn {
+    padding: 25px 0;
+}
+/*slider start*/
+.slider{
+    background-image: url(../images/slider_bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+}
+.slider_btn{
+    text-decoration: none !important;
+/*    color: #32C69A;*/
+    font-size: 20px;
+}
+.slider_btn p:hover{
+  
+    color: #32C69A;
+    border: 1px solid #32C69A;
+    border-radius: 3px;
+}
+footer{
+    background-color: #F4F8FB;
+    padding: 30px 0;
+    
+}
+footer i{
+    font-size: 25px;
+    margin: 0 10px;
+}

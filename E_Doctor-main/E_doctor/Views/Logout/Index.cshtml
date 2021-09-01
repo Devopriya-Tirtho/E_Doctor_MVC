@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("logouts", "Logout", FormMethod.Post)) { 
+<td>
+    <input type="submit" name="Submit" value="Logout" />
+    
+</td>
+}

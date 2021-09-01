@@ -1,0 +1,273 @@
+﻿@model RegistrationUserMVC.Models.Calender
+@{
+    /**/
+
+    /**/
+
+    /**/
+
+
+    ViewBag.Title = "Index";
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <!--
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/prescription.css">
+        <link rel="stylesheet" href="css/media.css">
+    -->
+    <link href="~/Content/mybootstrap.css" rel="stylesheet" />
+    <link href="~/Content/prescription.css" rel="stylesheet" />
+    <title>Bootstrap PSD to HTML</title>
+</head>
+
+    @using (Html.BeginForm())
+    {
+<body>
+
+    <section class="prescription">
+        <div class="container prescription_body">
+            <p class="h1 text-center mt-5 mb-5">Make Appointment</p>
+            <form>
+                <div class="form-group row">
+                    <label for="inputName" class="col-sm-2 col-form-label">Patient Name</label>
+                    <div class="col-sm-6">
+                        @Html.EditorFor(model => model.PatientName, new { htmlAttributes = new { @class = "form-control " } })
+
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label for="inputTest" class="col-sm-2 col-form-label">Department </label>
+                    <div class="col-sm-6">
+                        @Html.DropDownListFor(model => model.Department, new List<SelectListItem>
+       {
+       new SelectListItem{Text="Haematology" ,Value="Haematology"},
+       new SelectListItem{Text="Neurology" ,Value="Neurology"},
+       new SelectListItem{Text="Gastrology" ,Value="Gastrology"},
+       new SelectListItem{Text="Cardilogy" ,Value="Cardilogy"},
+
+
+       }, "Select Department", new { htmlAttributes = new { @class = "form-control " } })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="inputAge" class="col-sm-2 col-form-label">Doctor Name</label>
+                    <div class="col-sm-10">
+                        @Html.DropDownListFor(model => model.DoctorName, new List<SelectListItem>
+       {
+       new SelectListItem{Text="Dr.Biju" ,Value="Dr.Biju"},
+       new SelectListItem{Text="Dr.Vikram" ,Value="Dr.Vikram"},
+       new SelectListItem{Text="Dr.Franklin" ,Value="Dr.Franklin"},
+       new SelectListItem{Text="Dr.Goerge" ,Value="Dr.Goerge"},
+
+
+       }, "Select Doctor", new { htmlAttributes = new { @class = "form-control " } })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="inputFollow" class="col-sm-2 col-form-label">Appointment Date</label>
+                    <div class="col-sm-7">
+                        @Html.EditorFor(model => model.AppointmentDate, new { htmlAttributes = new { @class = "datepicker form-control" } })
+
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="inputFollow" class="col-sm-2 col-form-label">Appointment Time</label>
+                    <div class="col-sm-10">
+                        @Html.DropDownListFor(model => model.AppointmentTime, new List<SelectListItem>
+        {
+        new SelectListItem{Text="12.30" ,Value="12.30"},
+        new SelectListItem{Text="12.40" ,Value="12.40"},
+        new SelectListItem{Text="12.50" ,Value="12.50"},
+        new SelectListItem{Text="1.00" ,Value="1.00"},
+
+
+        }, "Select Time")
+                    </div>
+                </div>
+
+                <div class="form-group  text-center">
+                    <div class=" m-4">
+                        <button class="btn btn-outline-warning" type="submit" name="Submit">Submit </button>
+                    </div>
+                </div>
+                @*<div class="form-group  text-center">
+            <div class="m-1">
+                <button class="btn btn-outline-warning" type="submit"><a href="/Search/Index">Appoinment List </a></button>
+            </div>
+        </div>*@
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <label class="label-success">@ViewBag.SuccessMessage</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <label class="label-danger">@ViewBag.DuplicateMessage</label>
+                    </div>
+                </div>
+
+
+
+
+            </form>
+        </div>
+
+    </section>
+
+
+
+
+    <!-- jQuery first then Bootstrap JS -->
+    <!--
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+    -->
+    <!--    customized js-->
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/mybootstrap.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+    }
+
+</html>
+
+
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+
+@section scripts{
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script>
+        $(function () {
+            $(".datepicker").datepicker();
+        });
+    </script>
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    @*@using (Html.BeginForm())
+        {
+            <table>
+
+                <tr>
+                    <td>@Html.LabelFor(model => model.PatientName)</td>
+
+                    <td style=" padding:20px">@Html.EditorFor(model => model.PatientName)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.DoctorName)</td>
+                    <td style=" padding:20px">
+
+                        @Html.DropDownListFor(model =>model.DoctorName,new List<SelectListItem>
+            {
+            new SelectListItem{Text="Dr.Biju" ,Value="Dr.Biju"},
+            new SelectListItem{Text="Dr.Vikram" ,Value="Dr.Vikram"},
+            new SelectListItem{Text="Dr.Franklin" ,Value="Dr.Franklin"},
+            new SelectListItem{Text="Dr.Goerge" ,Value="Dr.Goerge"},
+
+
+            },"Select Doctor")
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>@Html.LabelFor(model => model.Department)</td>
+
+                    <td style=" padding:20px">
+
+                        @Html.DropDownListFor(model =>model.Department,new List<SelectListItem>
+            {
+            new SelectListItem{Text="Haematology" ,Value="Haematology"},
+            new SelectListItem{Text="Neurology" ,Value="Neurology"},
+            new SelectListItem{Text="Gastrology" ,Value="Gastrology"},
+            new SelectListItem{Text="Cardilogy" ,Value="Cardilogy"},
+
+
+            },"Select Department")
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.AppointmentDate)</td>
+                    <td style=" padding:20px">
+                        @Html.EditorFor(model => model.AppointmentDate, new { htmlAttributes = new { @class = "datepicker" } })
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.AppointmentTime)</td>
+                    <td style=" padding:20px">
+
+                        @Html.DropDownListFor(model =>model.AppointmentTime,new List<SelectListItem>
+            {
+            new SelectListItem{Text="12.30" ,Value="12.30"},
+            new SelectListItem{Text="12.40" ,Value="12.40"},
+            new SelectListItem{Text="12.50" ,Value="12.50"},
+            new SelectListItem{Text="1.00" ,Value="1.00"},
+
+
+            },"Select Time")
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        <input type="submit" name="Submit" value="Ok" />
+                        <button style="text-align: center;"><a href="/Search/Index">Appointment List</a></button>
+
+                    </td>
+                </tr>
+            </table>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <label class="label-success">@ViewBag.SuccessMessage</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <label class="label-danger">@ViewBag.DuplicateMessage</label>
+                </div>
+            </div>
+        }
+
+
+        <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+
+        @section scripts{
+            <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+            <script>
+                $(function () {
+                    $(".datepicker").datepicker();
+                });
+            </script>
+
+        }*@
+

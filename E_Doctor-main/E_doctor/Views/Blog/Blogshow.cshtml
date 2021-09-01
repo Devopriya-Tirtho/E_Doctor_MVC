@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "Blogshow";
+}
+
+<h2>Blogshow</h2>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    @*<link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/blogstyle.css">
+        <link rel="stylesheet" href="css/media.css">*@
+    <link href="~/Content/mybootstrap.css" rel="stylesheet" />
+    <link href="~/Content/blogstyle.css" rel="stylesheet" />
+    <title>Bootstrap PSD to HTML</title>
+</head>
+
+
+@using (Html.BeginForm())
+{
+
+<body>
+
+    <div class="blog">
+        <div class="container blog_background">
+            @foreach (RegistrationUserMVC.Models.BlogInsert emp in Model)
+            {
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="blog_description">
+
+                            <div class="blog_name">
+                                <h1>@emp.BlogHeading</h1>
+                            </div>
+                            <div class="blog_mainfeature">
+
+                                <h2>EXPERIENCE SHARING :</h2>
+                                <p>@emp.ExperienceSharing</p>
+                                @*<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, sequi.</p>*@
+                            </div>
+                            <div class="blog_Text">
+                                <h2>MOTIVATE YOURSELF :</h2>
+
+                                <h6>@emp.Motivation</h6>
+                            </div>
+                            <div class="blog_price">
+                                <h2>Advice</h2>
+
+                                <p>@emp.Advice</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            }
+
+
+
+
+        </div>
+
+    </div>
+
+    <div>
+        <button style="text-align: center;"><a href="/Blog/Index">Write Blog</a></button>
+    </div>
+
+
+
+    <!-- jQuery first then Bootstrap JS -->
+    @*<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>*@
+    <!--    customized js-->
+    @*<script type="text/javascript" src="js/main.js"></script>*@
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/mybootstrap.js"></script>
+</body>
+
+}
+
+</html>
+
+

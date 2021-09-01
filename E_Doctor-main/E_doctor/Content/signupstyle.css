@@ -1,0 +1,77 @@
+/*CSS style sheet*/
+
+body{
+    background-image: url(../images/bb2.jpg);
+    background-position: top;
+}
+.main-wrapper{
+	width:500px;
+	margin: 110px auto;
+	background:white;
+	padding:5px;
+	border-radius:10px;
+	border: 2px solid #95a5a6;
+}
+.avatar{
+	
+	width:150px;
+	text-align:center;
+}
+
+.myform{
+	width:450px;
+	margin:0 auto;
+}
+.radiobtns{
+	margin: 10px;
+}
+.inputvalues{
+	width:430px;
+	margin:10px auto;
+	padding:15px;
+}
+#login_btn{
+	margin-top:10px;
+	padding:5px;
+	color:white;
+	width:100%;
+	text-align:center;
+	font-size:18px;
+	font-weight:bold;     border-radius: 30px;
+
+}
+#register_btn{
+	margin-bottom:20px;
+	margin-top:10px;
+	padding:5px;
+	color:white;
+	width:100%;
+	text-align:center;
+	font-size:18px;
+	font-weight:bold;
+     border-radius: 30px;
+}
+
+#signup_btn{
+	margin-top:10px;
+	
+	padding:5px;
+	color:white;
+	width:100%;
+	text-align:center;
+	font-size:18px;
+	font-weight:bold;
+    border-radius: 30px;
+}
+
+#back_btn{
+	margin-top:10px;
+	
+	padding:5px;
+	color:white;
+	width:30%;
+	text-align:center;
+	font-size:18px;
+	font-weight:bold;
+    border-radius: 30px;
+}

@@ -1,0 +1,90 @@
+﻿@model RegistrationUserMVC.Models.Doctor
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<html>
+
+<head>
+    <title>Doctor Registration Page</title>
+    @*<link rel="stylesheet" href="css/bootstrap.css">
+            <link rel="stylesheet" href="css/signupstyle.css">
+        <link rel="stylesheet" href="css/media.css">*@
+    <link href="~/Content/mybootstrap.css" rel="stylesheet" />
+    <link href="~/Content/signupstyle.css" rel="stylesheet" />
+</head>
+
+<body style="background-color:#bdc3c7">
+
+    <div class="main-wrapper">
+
+        <h2 class="text-center m-4">Sign Up</h2>
+
+
+        @using (Html.BeginForm())
+        {@Html.AntiForgeryToken()
+
+        <form class="myform">
+            <label><b>First Name:</b></label><br>
+            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+
+            <label><b>Last Name:</b></label><br>
+            @Html.EditorFor(model => model.LastName
+           , new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.LastName
+           , "", new { @class = "text-danger" })
+            <label><b>Email:</b></label><br>
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            <label><b>BMA Registration Number:</b></label><br>
+            @Html.EditorFor(model => model.BMARegistrationNo, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.BMARegistrationNo, "", new { @class = "text-danger" })
+            <label><b>Password:</b></label><br>
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            <label><b>Age:</b></label><br>
+            @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+            <label><b>Year of Experience:</b></label><br>
+            @Html.EditorFor(model => model.ExperienceYear, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ExperienceYear, "", new { @class = "text-danger" })
+            <label><b>Area Of Speciality:</b></label><br>
+            @Html.EditorFor(model => model.AreaofSpeciality, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.AreaofSpeciality, "", new { @class = "text-danger" })
+            <label><b>Residence:</b></label><br>
+            @Html.EditorFor(model => model.Residence, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Residence, "", new { @class = "text-danger" })
+            <input name="submit_btn" type="submit" id="signup_btn" class="btn-secondary mb-3" value="Sign Up" /><br>
+
+        </form>
+
+    }
+
+        <!-- jQuery first then Bootstrap JS -->
+        @*<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+            <script type="text/javascript" src="js/bootstrap.js"></script>*@
+        <!--    customized js-->
+
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

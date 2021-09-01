@@ -1,0 +1,32 @@
+﻿@model RegistrationUserMVC.Models.Remedy
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{@Html.AntiForgeryToken()
+
+<form class="myform" action="register.php" method="post">
+
+
+    <label><b>Heading</b></label><br>
+    @Html.EditorFor(model => model.RemedyHeading, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.RemedyHeading, "", new { @class = "text-danger" })
+    <br /> <label><b>Symptoms</b></label><br>
+    @Html.EditorFor(model => model.Remedysymptom, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.Remedysymptom, "", new { @class = "text-danger" })
+    <br />  <label><b>Description:</b></label><br>
+    @Html.EditorFor(model => model.Remedydescription, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.Remedydescription, "", new { @class = "text-danger" })
+    <br />  <label><b>Medicine:</b></label><br>
+    @Html.EditorFor(model => model.Remedymedicine, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.Remedymedicine, "", new { @class = "text-danger" })
+    <br />
+    <input name="submit_btn" type="submit" id="signup_btn" class="btn-secondary mb-3" value="Insert" /><br>
+
+</form>
+
+}
+

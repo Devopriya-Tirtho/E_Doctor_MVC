@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "Remedyshow";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="~/Content/mybootstrap.css" rel="stylesheet" />
+    <link href="~/Content/remediesstyle.css" rel="stylesheet" />
+
+    <title>Bootstrap PSD to HTML</title>
+</head>
+@using (Html.BeginForm())
+{
+
+    <body>
+
+
+        <div class="remedies">
+            <div class="container remedies_background">
+                @foreach (RegistrationUserMVC.Models.Remedy emp in Model)
+                {
+
+                    <div class="row">
+                        <div class="container">
+                            <p class="h1 text-center p-3">@emp.RemedyHeading</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="remedies_description">
+
+                                <div class="remedies_name">
+
+                                </div>
+                                <div class="remedies_mainfeature">
+
+                                    <h2>SYMPTOMS :</h2>
+                                    <p>@emp.Remedysymptom</p>
+                                    @*<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, sequi.</p>*@
+                                </div>
+                                <div class="remedies_Text">
+                                    <h2>DESCRIPTION :</h2>
+
+                                    <h6>@emp.Remedydescription</h6>
+                                </div>
+                                <div class="remedies_price">
+                                    <h2>MEDICINE :</h2>
+
+                                    <p>@emp.Remedymedicine</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="remedies_image">
+                                <img class="img-fluid p-2 rounded" src="~/images/fever.jpg" alt="error">
+                              
+                            </div>
+
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+
+        <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+        <script src="~/Scripts/mybootstrap.js"></script>
+    </body>
+}
+</html>
